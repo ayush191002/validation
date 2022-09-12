@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "express": "^4.16.4",
+    "fluentvalidation-ts": "^2.2.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  },
+  "name": "monday",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/chai": "^4.2.7",
+    "@types/express-serve-static-core": "4.16.4",
+    "@types/express": "4.16.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^14.14.20",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.6.3"
+  },
+  "scripts": {
+    "test": "npm run build && mocha --exit --require ts-node/register test/**/*.ts",
+    "build": "tsc -d",
+    "start": "tsc & node .",
+    "dev": "tsc -w & nodemon .",
+    "local": "npx nodemon ./src/app.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

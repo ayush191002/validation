@@ -1,0 +1,24 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "src/**/*.js": true,
+    "src/**/*.js.map": true,
+    "**/*.d.ts": true,
+    "index.js": true,
+    "index.js.map": true
+  },
+  "typescript.referencesCodeLens.enabled": false,
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "eslint.validate": [
+    "typescript"
+  ],
+  "editor.codeActionsOnSave": [
+    "source.organizeImports",
+    "source.fixAll"
+  ]
+}
