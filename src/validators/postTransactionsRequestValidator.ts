@@ -7,6 +7,7 @@ class PostTransactionsRequestValidator extends AbstractValidator<PostTransaction
       this.ruleForEach("transactions")
             .notNull()
             .withMessage(`transactions[] can't have null elements.`);
+      this.ruleForEach('transactions.account')     
    }
 }
 
