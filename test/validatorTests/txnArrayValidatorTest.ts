@@ -30,6 +30,13 @@ describe('postTransactionsRequestValidator tests', () => {
         assert.equal(error.message, expectedMessage);
     });
 
+    it('txn should not have duplicate sequence numbers', () => {
+        let data = { transactions: [ {sequenceNumber: 1}  as TransactionEntry, {sequenceNumber: 1} as TransactionEntry ] };
+        let expectedMessage = "sequenceNumber(s) in entries should be unique.";
+        let error = throws(() => postTransactionsRequestValidator.isValid(data));
+        assert.equal(error.message, expectedMessage);
+    });
+
     it('validator should fail when account conditions are not same for same account', () => {
         let expectedMessage = 'Please check the account conditions in the request.';
         let data = {
@@ -38,6 +45,7 @@ describe('postTransactionsRequestValidator tests', () => {
                     accountCode: 'abc',
                     currency: Currency.USD,
                     amount: 123,
+                    sequenceNumber: 1,
                     conditions: {
                         account: {
                             minBalance: [
@@ -53,6 +61,7 @@ describe('postTransactionsRequestValidator tests', () => {
                     accountCode: 'abc',
                     currency: Currency.GBP,
                     amount: 123,
+                    sequenceNumber: 2,
                     conditions: {
                         account: {
                             minBalance: [
@@ -82,6 +91,7 @@ describe('postTransactionsRequestValidator tests', () => {
                     accountCode: 'abc',
                     currency: Currency.USD,
                     amount: 123,
+                    sequenceNumber: 1,
                     conditions: {
                         account: {
                             minBalance: [
@@ -97,6 +107,7 @@ describe('postTransactionsRequestValidator tests', () => {
                     accountCode: 'xyz',
                     currency: Currency.GBP,
                     amount: 123,
+                    sequenceNumber: 2,
                     conditions: {
                         account: {
                             minBalance: [
