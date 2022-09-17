@@ -87,22 +87,7 @@ describe('postTransactionsRequestValidator tests', () => {
 
         let data = {
             transactions: [
-                {
-                    accountCode: 'abc',
-                    currency: Currency.USD,
-                    amount: 123,
-                    sequenceNumber: 1,
-                    conditions: {
-                        account: {
-                            minBalance: [
-                                {
-                                    currency: Currency.USD,
-                                    amount: 100
-                                }
-                            ]
-                        }
-                    }
-                },
+               
                 {
                     accountCode: 'xyz',
                     currency: Currency.GBP,
@@ -117,6 +102,22 @@ describe('postTransactionsRequestValidator tests', () => {
                                 },
                                 {
                                     currency: Currency.GBP,
+                                    amount: 100
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    accountCode: 'abc',
+                    currency: Currency.USD,
+                    amount: 123,
+                    sequenceNumber: 1,
+                    conditions: {
+                        account: {
+                            minBalance: [
+                                {
+                                    currency: Currency.USD,
                                     amount: 100
                                 }
                             ]
