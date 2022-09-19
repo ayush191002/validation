@@ -41,7 +41,7 @@ class PostTransactionRequestValidator extends AbstractValidator<AccountCondition
 
             this.ruleForEach('minBalance')
 
-            // .must()
+            
       }
 }
 
