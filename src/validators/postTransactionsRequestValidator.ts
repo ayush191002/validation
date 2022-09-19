@@ -20,10 +20,11 @@ class PostTransactionsRequestValidator extends AbstractValidator<PostTransaction
             
 
       // this.ruleForEach('transactions')
+      // this.ruleForEach('transactions')
       //      .when('accountCode')
       // this.ruleFor('account')
       // this.ruleForEach("")
-      // this.ruleFor('account')
+    
       
       
    }
@@ -40,7 +41,6 @@ class PostTransactionRequestValidator extends AbstractValidator<AccountCondition
             super();
 
             this.ruleForEach('minBalance')
-
             
       }
 }
