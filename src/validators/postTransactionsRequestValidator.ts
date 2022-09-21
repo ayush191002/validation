@@ -39,6 +39,22 @@ class PostTransactionsRequestValidator extends AbstractValidator<PostTransaction
 
   haveValidAccountConditions(code: TransactionEntry[], model: PostTransactionsRequest): any{
       // let AccountCode  = 
+      let AccountCode = code.map((e=>{
+            e.accountCode
+      }))
+
+      for(let i=0; i<AccountCode.length; i++){
+            for(let j=1; j<AccountCode.length;j++){
+                  if(AccountCode[i]===AccountCode[j]){
+                        
+                  }continue;
+            }
+      }
+
+      function Checker(){
+            
+      }
+   
   }
 
 }
