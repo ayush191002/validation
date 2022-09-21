@@ -12,6 +12,8 @@ class PostTransactionsRequestValidator extends AbstractValidator<PostTransaction
             .withMessage("entries  is not a valid value.")
             .must(this.haveUniqueSequenceNumbers)
             .withMessage(`sequenceNumber(s) in entries should be unique.`)
+            .must(this.haveValidAccountConditions)
+            .withMessage('Account transation conditions should remain same.')
             .when(e => e?.transactions?.length > 0, "AppliesToCurrentValidator");
 
       this.ruleForEach("transactions")
@@ -34,16 +36,21 @@ class PostTransactionsRequestValidator extends AbstractValidator<PostTransaction
       let uniqueSequenceNums = unique(sequenceNums);
       return uniqueSequenceNums.length == sequenceNums.length;
   }
+
+  haveValidAccountConditions(code: TransactionEntry[], model: PostTransactionsRequest): any{
+      // let AccountCode  = 
+  }
+
 }
 
-class PostTransactionRequestValidator extends AbstractValidator<AccountConditions>{
-      constructor(){
-            super();
+// class PostTransactionRequestValidator extends AbstractValidator<AccountConditions>{
+//       constructor(){
+//             super();
 
-            this.ruleForEach('minBalance')
+//             this.ruleForEach('minBalance')
             
-      }
-}
+//       }
+// }
 
 
 export const postTransactionRequestValidator = new PostTransactionsRequestValidator();
