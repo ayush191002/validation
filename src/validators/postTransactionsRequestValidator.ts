@@ -74,3 +74,5 @@ export const postTransactionRequestValidator = new PostTransactionsRequestValida
 
 // class PostAccountValidator extends 
 export const postTransactionsRequestValidator = new PostTransactionsRequestValidator();
+
+//['abc, zyq, abc, csd]
